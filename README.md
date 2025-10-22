@@ -49,7 +49,6 @@ Durante o curso são trabalhados temas como:
 | 🧭 **Git e GitHub** | Controle de versão e colaboração |
 | 🌍 **Navegadores Web** | Testes e depuração |
 | 🎨 **Figma / Canva** | Design de interface |
-| 🧩 **Bubble / Lovable** | Ferramentas No-Code |
 
 ---
 
