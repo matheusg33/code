@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários com JS</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="formulario">
+        <input type="text" name="nome" placeholder="Nome" />
+        <input type="email" name="email" placeholder="Email" />
+        <input type="number" name="idade" placeholder="Idade" />
+        <input type="password" name="senha" placeholder="Senha" />
+
+
+        <select name="genero">
+            <option value="">Selecione o gênero</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select>
+
+        <textarea name="mensagem" placeholder="Mensagem"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

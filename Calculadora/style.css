@@ -1,0 +1,72 @@
+/* Fundo com gradiente suave */
+body {
+  margin: 0;
+  background: linear-gradient(to top right, #ff5f6d, #8e44ad);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Corpo da calculadora */
+.calculadora {
+  background-color: #2c2c54;
+  border-radius: 25px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Visor da calculadora */
+.display {
+  background-color: #1e1e3f;
+  color: white;
+  font-size: 48px;
+  text-align: right;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* Grade de botões */
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Estilo base dos botões */
+button {
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Botões numéricos */
+button.numero {
+  background-color: #3d3d5c;
+  color: white;
+}
+
+/* Botões de função (AC, ±, %) */
+button.func {
+  background-color: #4b4b6b;
+  color: white;
+}
+
+/* Botões de operação (÷, ×, −, +, =) */
+button.operador {
+  background-color: orange;
+  color: white;
+}
+
+/* Botão 0 ocupa duas colunas */
+button.zero {
+  grid-column: span 2;
+}
