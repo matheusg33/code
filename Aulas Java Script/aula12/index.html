@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //Exemplo de localStorage e sessionStorage em JavaScript
+
+    <input id="nome" placeholder="Nome">
+    <button id="salvar">Salvar no localStorage</button>
+
+    <script>
+    document.getElementById('salvar').addEventListener('click', function () {
+        var nome = document.getElementById('nome').value;
+        localStorage.setItem('nomeUsuario', nome);
+        alert('Salvo');
+    });
+    </script>
+
+ //Exemplo de localStorage 
+
+    <input type="text" id="nome" placeholder="Digite seu nome">
+    <button id="salvar">Salvar</button>
+    <button id="mostrar">Mostrar</button>
+    <p id="resultado"></p>
+
+    <script>
+    var salvar = document.getElementById("salvar");
+    var mostrar = document.getElementById("mostrar");
+    var nomeInput = document.getElementById("nome");
+    var resultado = document.getElementById("resultado");
+
+    salvar.addEventListener("click", function () {
+        var nome = nomeInput.value;
+        localStorage.setItem("nomeUsuario", nome);
+    });
+
+    mostrar.addEventListener("click", function () {
+        var nome = localStorage.getItem("nomeUsuario");
+        resultado.textContent = "Nome salvo: " + nome;
+    });
+    </script>
+
+    <input type="text" id="email" placeholder="Digite seu e-mail">
+    <button id="salvarEmail">Salvar</button>
+    <button id="mostrarEmail">Mostrar</button>
+    <p id="resultadoEmail"></p>
+
+    //Exemplo de localStorage com múltiplos botões
+    <button id="save">Salvar</button>
+    <button id="read">Ler</button>
+    <button id="remove">Remover</button>
+    <button id="clear">Limpar tudo</button>
+    <script>
+    document.getElementById('save').addEventListener('click', function () {
+        localStorage.setItem('corFundo', 'azul');
+    });
+    document.getElementById('read').addEventListener('click', function () {
+        var v = localStorage.getItem('corFundo');
+        console.log('Cor:', v);
+    });
+    document.getElementById('remove').addEventListener('click', function () {
+        localStorage.removeItem('corFundo');
+    });
+    document.getElementById('clear').addEventListener('click', function () {
+        localStorage.clear();
+    });
+    </script>
+
+
+ //Exemplo de sessionStorage
+    <script>
+    var salvarEmail = document.getElementById("salvarEmail");
+    var mostrarEmail = document.getElementById("mostrarEmail");
+    var emailInput = document.getElementById("email");
+    var resultadoEmail = document.getElementById("resultadoEmail");
+
+    salvarEmail.addEventListener("click", function () {
+        var email = emailInput.value;
+        sessionStorage.setItem("emailUsuario", email);
+    });
+
+    mostrarEmail.addEventListener("click", function () {
+        var email = sessionStorage.getItem("emailUsuario");
+        resultadoEmail.textContent = "Email salvo: " + email;
+    });
+    </script>
+
+    //Exemplo de sessionStorage com múltiplos botões 
+    <button id="saveSess">Salvar sessão</button>
+    <button id="readSess">Ler sessão</button>
+    <script>
+    document.getElementById('saveSess').addEventListener('click', function () {
+        sessionStorage.setItem('ultimaPagina', '/dashboard');
+    });
+    document.getElementById('readSess').addEventListener('click', function () {
+        var p = sessionStorage.getItem('ultimaPagina');
+        console.log('Última página:', p);
+    });
+    </script>
+
+
+
+</body>
+</html>

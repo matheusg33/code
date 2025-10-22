@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function soma(n1,n2){
+            let res = n1 + n2;
+            return res
+        }
+        function sub(n1,n2){
+            let res = n1 - n2;
+            return res
+        }
+        function div(n1, n2){
+            let res = n1 / n2;
+            return res
+        }
+        function mult(n1,n2){
+            let res = n1 * n2
+            return res
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let valor1 = Number(window.prompt("Informe o 1º valor"));
+        let valor2 = Number(window.prompt("Informe o 2º valor"));
+        let opt    = parseInt(window.prompt(
+                                    "Escolha a operação:\n" +
+                                    "1 - Soma\n" +
+                                    "2 - Subtração\n" +
+                                    "3 - Multiplicação\n" +
+                                    "4 - Divisão"
+                                    ))
+        
+        let resultado
+
+        switch(opt){
+            case 1:
+                resultado = soma(valor1,valor2)
+                break            
+            case 2:
+                resultado = sub(valor1,valor2)
+                break
+            case 3:
+                resultado = mult(valor1,valor2)
+                break
+            case 4:
+                resultado = div(valor1,valor2)
+                break
+            default:
+                window.alert("Opção inválida!")
+                break
+        }
+        document.write(`O resultado é: ${resultado}`)
+    </script>
+    
+</body>
+</html>

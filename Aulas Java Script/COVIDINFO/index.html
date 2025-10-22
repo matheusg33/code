@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Avaliação de Sintomas COVID</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f4f8;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    .section-title {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #34495e;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Avaliação de Sintomas COVID</h1>
+
+    <form id="formulario">
+        <label>Nome: <input type="text" id="nome" required></label>
+        <label>Idade: <input type="number" id="idade" required></label>
+
+        <div class="section-title">Sintomas Comuns:</div>
+        <label><input type="checkbox" class="sintoma" value="1"> Dor de garganta ou garganta inflamada</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Perda de olfato ou paladar</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Tosse seca e persistente</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Coriza ou nariz entupido</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Diarreia</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Dores musculares</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Dores de cabeça</label>
+
+        <div class="section-title">Sintomas Agravantes:</div>
+        <label><input type="checkbox" class="sintoma" value="1"> Febre acima de 38° C</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Falta de ar</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Cansaço excessivo</label>
+        <label><input type="checkbox" class="sintoma" value="1"> Dor no peito</label>
+
+        <button id="botao" type="submit">Calcular Pontuação</button>
+     </form>
+
+    <div id="resultado"></div>
+  </div>
+
+<script>
+  const form = document.getElementById("formulario");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    const nome = document.getElementById("nome").value;
+    const idade = document.getElementById("idade").value;
+
+    const sintomas = form.elements["questionario"]; // HTMLCollection → Array
+
+    let pontos = 0;
+
+    sintomas.forEach(function (sintoma) {
+      if (sintoma.checked === true) {
+        pontos += parseInt(sintoma.value);
+      }
+    });
+
+    let classificacao = "";
+    if (pontos <= 5) {
+      classificacao = "Poucas chances de ter COVID";
+    } else if (pontos <= 7) {
+      classificacao = "COVID Moderado";
+    } else if (pontos <= 10) {
+      classificacao = "COVID Grave";
+    } else {
+      classificacao = "COVID Crítico";
+    }
+
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML =
+      `Olá ${nome}, idade ${idade} anos.<br>` +
+      `Você marcou ${pontos} ponto(s).<br>` +
+      `Classificação: <strong>${classificacao}</strong>`;
+  });
+</script>
+
+
+</body>
+</html>

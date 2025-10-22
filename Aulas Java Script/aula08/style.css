@@ -1,0 +1,74 @@
+/* Estilo básico para o formulário */
+form {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estilo para o botão */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#mensagem {
+  display: none; /* escondida por padrão */
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #e0ffe0;
+  border: 1px solid #00aa00;
+  border-radius: 6px;
+  transition: opacity 1s ease-out;
+  opacity: 1;
+  font-family: sans-serif;
+}
+#mensagem.fade-out {
+  opacity: 0;
+}
+/* Campo com erro (vazio ao sair) */
+.erro {
+  border: 2px solid #d9534f;
+  background-color: #fff5f5;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+/* Campo validado (preenchido corretamente) */
+.ok {
+  border: 2px solid #007bff;
+  background-color: #f0f8ff;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Estilo do placeholder */
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+
